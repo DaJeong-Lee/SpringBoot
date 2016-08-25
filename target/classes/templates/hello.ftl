@@ -16,7 +16,6 @@ html body{
 		<#include "menu.ftl">
 	    <h2 style="clear:both;">Hello ${name}!</h2>
 	    <img src="image/test.jpg"/>
-	    <#include "footer.ftl">
     </div>
 </body>
 </html>

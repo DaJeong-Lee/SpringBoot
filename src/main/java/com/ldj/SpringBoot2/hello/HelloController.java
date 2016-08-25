@@ -1,5 +1,7 @@
 package com.ldj.SpringBoot2.hello;
 
+import java.util.HashMap;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,4 +14,13 @@ public class HelloController {
         model.addAttribute("name", name);
         return "hello";
     }
+	
+	@RequestMapping("varWidth")
+	public String varWidth(Model model, @RequestParam HashMap<String, Object> params){
+		System.out.println(params.toString());
+		
+		return "varWidth";
+	}
+	
+	
 }
