@@ -1,4 +1,4 @@
-package com.ldj.SpringBoot2.hello;
+package com.ldj.SpringBoot2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

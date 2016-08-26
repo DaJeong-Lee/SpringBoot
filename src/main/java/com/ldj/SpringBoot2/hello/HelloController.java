@@ -15,12 +15,10 @@ public class HelloController {
         return "hello";
     }
 	
-	@RequestMapping("varWidth")
+	@RequestMapping("/varWidth")
 	public String varWidth(Model model, @RequestParam HashMap<String, Object> params){
 		System.out.println(params.toString());
 		
 		return "varWidth";
 	}
-	
-	
 }
