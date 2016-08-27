@@ -1,4 +1,4 @@
-package com.ldj.SpringBoot2.hello;
+package com.ldj.SpringBoot2.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,13 +6,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ldj.SpringBoot2.rest.RestTemplateTest;
-
 @Controller
 public class ArticleTestController {
 	
 	@Autowired
 	RestTemplateTest test;
+	
+	@RequestMapping(value="/rest/init", method=RequestMethod.GET)
+	public String init(Model model){
+		
+		return "/html/init.html";
+	}
 	
 	@RequestMapping(value="/rest/articles", method=RequestMethod.GET)
 	public String index(Model model){
@@ -50,4 +54,6 @@ public class ArticleTestController {
 		
 		return "rest";
 	}
+	
+	
 }

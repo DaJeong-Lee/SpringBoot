@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script>
+	$(function(){
+		
+	});
+	
+	function go(){
+		var form = new Object();
+		form.id = $('#id').val(); 
+		
+		if(isNaN(form.id)){
+			alert('id는 숫자여야 합니다.');
+			return;
+		}
+		
+		form.title = $('#title').val(); 
+		form.content = $('#content').val(); 
+		console.log(form);
+		console.log(JSON.stringify(form));
+
+		//rest api에 post 전송(받는 쪽은 @requestbody 사용)
+		$.ajax({
+			type:'post',
+			url:'http://localhost:8080/api/articles',
+			contentType: 'application/json', //서버에 데이터를 보낼 때 사용하는 content-type header값 
+			data:JSON.stringify(form), 
+			dataType:'json', //서버에서 반환되는 데이터 형식
+			success:function(data){
+				console.log(data);
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<h3>Test Post Request</h3>
+	<div style="border: 1px solid green;">
+		<form action="http://localhost:8080/api/articles" method="post">
+			id &nbsp; <input type="text" name="id" id="id"/> <br/>
+			title &nbsp;  <input type="text" name="title" id="title" /><br/>
+			content  &nbsp; <input type="text" name="content" id="content"/><br/>
+			<input type="button" onclick="go();" value="확인"/>
+		</form>
+	</div>
+</body>
+</html>
