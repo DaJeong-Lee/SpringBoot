@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Article implements Serializable{
+
 	private long id;
 	private String title;
 	private String content;
@@ -32,5 +33,10 @@ public class Article implements Serializable{
 	}
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+	
+	@Override
+	public String toString() {
+		return "Article [id=" + id + ", title=" + title + ", content=" + content + ", comments=" + comments + "]";
 	}
 }

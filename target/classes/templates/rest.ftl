@@ -14,5 +14,8 @@ html body{
 <body>
 	<h2>Rest!!</h2>
 	<br/>
+	<div>
+		${result!결과값없음}
+	</div>
 </body>
 </html>

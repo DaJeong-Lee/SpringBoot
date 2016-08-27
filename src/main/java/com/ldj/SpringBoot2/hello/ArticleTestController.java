@@ -16,7 +16,37 @@ public class ArticleTestController {
 	
 	@RequestMapping(value="/rest/articles", method=RequestMethod.GET)
 	public String index(Model model){
-		test.requestIndex();
+		String result = test.requestIndex();
+		
+		model.addAttribute("result", result);
+		
+		return "rest";
+	}
+	
+	@RequestMapping(value="/rest/articleCreate", method=RequestMethod.GET)
+	public String create(Model model){
+		String result = test.requestCreate();
+		
+		model.addAttribute("result", result);
+		
+		return "rest";
+	}
+	
+	
+	@RequestMapping(value="/rest/articleDelete", method=RequestMethod.GET)
+	public String destroy(Model model){
+		String result = test.requestDelete();
+		
+		model.addAttribute("result", result);
+		
+		return "rest";
+	}
+	
+	@RequestMapping(value="/rest/articlePut", method=RequestMethod.GET)
+	public String update(Model model){
+		String result = test.requestPut();
+		
+		model.addAttribute("result", result);
 		
 		return "rest";
 	}

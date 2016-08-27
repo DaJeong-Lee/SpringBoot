@@ -22,6 +22,12 @@ public class ArticleList {
 		a2.setContent("content2");
 		articles.add(a2);
 		
+		Article a3 = new Article();
+		a3.setId(3);
+		a3.setTitle("a3");
+		a3.setContent("content3");
+		articles.add(a3);
+		
 		return articles;
 	}
 }
