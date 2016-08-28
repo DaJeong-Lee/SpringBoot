@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div.trans div{
+	float:left;
+	background-color: blue;
+	width:100px;
+	height:100px;
+}
+div.trans div:active{
+	background-color: red;
+}
+.scale:hover{
+	/* 원래크기의 1.4배 확대 , 1이하로 주면 축소 가능 */
+	transform: scale(1.4);
+}
+.translate:hover{
+	/* x축, y축으로 이동 */
+	transform: translate(-20px, -20px);
+}
+.rotate:hover{
+	/* 각도만큼 회전 */
+	transform: rotate(30deg);
+}
+
+</style>
+</head>
+<body>
+	<div class="trans">
+		<div class="scale">
+			scale
+		</div>
+		<div class="translate">
+			translate
+		</div>
+		<div class="rotate">
+			rotate
+		</div>
+	</div>
+</body>
+</html>
