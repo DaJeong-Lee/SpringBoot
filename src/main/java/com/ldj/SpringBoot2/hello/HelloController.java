@@ -20,6 +20,11 @@ public class HelloController {
         return "hello";
     }
 	
+	@RequestMapping("/modal")
+    public String modal(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        model.addAttribute("name", name);
+        return "modal";
+    }
 	@RequestMapping("/varWidth")
 	public String varWidth(Model model, @RequestParam HashMap<String, Object> params){
 		System.out.println(params.toString());
